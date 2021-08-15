@@ -14,6 +14,7 @@ This project is made of using all the latest technologies of Modern Android Deve
 1.To run this app you will need to create a firebase project and link it up with the project.
 https://firebase.google.com/docs/android/setup
 2.Create Firebase Authentication user and replace the UserId generated in RecipeFirestoreServiceImpl file.
+
  const val USER_ID =
             "XXXXXXXXXXXXXXXXXXXXXXXXXXX" // TODO hardcoded for single user..replace with your firebase ID
  
