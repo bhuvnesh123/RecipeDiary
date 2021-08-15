@@ -1,0 +1,164 @@
+import dependencies.AnnotationProcessing
+import dependencies.Versions
+import dependencies.Application
+import dependencies.dependencies.Dependencies
+import dependencies.dependencies.SupportDependencies
+import dependencies.dependencies.TestDependencies
+import dependencies.dependencies.AndroidTestDependencies
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+
+
+android {
+    compileSdkVersion Versions.compilesdk
+    buildToolsVersion Versions.build_tools_version
+
+    defaultConfig {
+        applicationId Application.id
+        minSdkVersion Versions.minsdk
+        targetSdkVersion Versions.targetsdk
+        versionCode Application.version_code
+        versionName Application.version_name
+        multiDexEnabled true
+
+
+        testInstrumentationRunner "com.bhuvnesh.diary.framework.MockTestRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            manifestPlaceholders = [enableCrashReporting:"false"]
+        }
+        release {
+            minifyEnabled false
+            manifestPlaceholders = [enableCrashReporting:"true"]
+        }
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+    sourceSets {
+        test.resources.srcDirs += 'src/test/res'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        useIR = true
+    }
+    hilt {
+        enableTransformForLocalTests = true
+    }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerVersion Versions.kotlin
+        kotlinCompilerExtensionVersion Versions.compose
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Kotlin
+    implementation Dependencies.kotlin_standard_library
+    implementation Dependencies.kotlin_reflect
+    implementation Dependencies.ktx
+    implementation Dependencies.kotlin_coroutines_play_services
+
+    // Dependencies
+    implementation Dependencies.hilt
+    implementation Dependencies.firebase_firestore
+    implementation Dependencies.firebase_auth
+    implementation Dependencies.firebase_analytics
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofit_gson
+    implementation platform(Dependencies.firebase_bom)
+    implementation Dependencies.firebase_analytics_ktx
+    implementation Dependencies.firebase_crashlytics_ktx
+    // Support
+    implementation SupportDependencies.appcompat
+    implementation SupportDependencies.constraintlayout
+    implementation SupportDependencies.material_design
+    implementation SupportDependencies.swipe_refresh_layout
+    implementation Dependencies.room_runtime
+    implementation Dependencies.room_ktx
+
+
+    // Annotation Processing
+    kapt AnnotationProcessing.hilt_compiler
+    kapt AnnotationProcessing.room_compiler
+
+    //compose
+    implementation Dependencies.compose_ui
+    implementation Dependencies.compose_foundation
+    implementation Dependencies.compose_runtime_livedata
+    implementation Dependencies.compose_runtime_rxjava2
+    implementation Dependencies.compose_material
+    implementation Dependencies.compose_material_icons_core
+    implementation Dependencies.compose_material_icons_extended
+    implementation Dependencies.compose_compiler
+    implementation Dependencies.compose_tooling
+    implementation Dependencies.compose_constraintLayout
+
+
+
+
+
+    // Unit Tests
+    testImplementation TestDependencies.mockk
+    testImplementation TestDependencies.jupiter_api
+    testImplementation TestDependencies.jupiter_params
+    testImplementation TestDependencies.junit4
+    testRuntimeOnly TestDependencies.jupiter_engine
+
+    implementation Dependencies.navigation_runtime
+    implementation Dependencies.navigation_ui
+    implementation Dependencies.navigation_fragment
+    implementation Dependencies.navigation_dynamic
+    implementation Dependencies.material_dialogs
+    implementation Dependencies.material_dialogs_input
+    implementation Dependencies.play_core
+    implementation Dependencies.leak_canary
+    implementation Dependencies.markdown_processor
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+
+    androidTestImplementation AndroidTestDependencies.kotlin_test
+    androidTestImplementation AndroidTestDependencies.coroutines_test
+    androidTestImplementation AndroidTestDependencies.espresso_core
+    androidTestImplementation AndroidTestDependencies.espresso_contrib
+    androidTestImplementation AndroidTestDependencies.idling_resource
+    androidTestImplementation AndroidTestDependencies.mockk_android
+    androidTestImplementation AndroidTestDependencies.test_runner
+    androidTestImplementation AndroidTestDependencies.test_rules
+    androidTestImplementation AndroidTestDependencies.text_core_ktx
+    androidTestImplementation AndroidTestDependencies.navigation_testing
+    debugImplementation AndroidTestDependencies.fragment_testing
+    kaptAndroidTest  AnnotationProcessing.hilt_compiler
+    androidTestImplementation AndroidTestDependencies.hilt_testing
+
+
+
+}
+apply plugin: 'com.google.gms.google-services'

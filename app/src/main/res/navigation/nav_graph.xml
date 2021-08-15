@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.bhuvnesh.diary.framework.presentation.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_recipeListFragment"
+            app:destination="@id/recipeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeListFragment"
+        android:name="com.bhuvnesh.diary.framework.presentation.recipeList.RecipeListFragment"
+        android:label="RecipeListFragment">
+        <action
+            android:id="@+id/action_recipeListFragment_to_recipeInsertNewFragment"
+            app:destination="@id/recipeInsertNewFragment" />
+        <action
+            android:id="@+id/action_recipeListFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeInsertNewFragment"
+        android:name="com.bhuvnesh.diary.framework.presentation.recipeNew.RecipeInsertNewFragment"
+        android:label="RecipeInsertNewFragment">
+        <action
+            android:id="@+id/action_recipeInsertNewFragment_to_recipeListFragment"
+            app:popUpTo="@id/recipeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.bhuvnesh.diary.framework.presentation.recipeDetail.RecipeDetailFragment"
+        android:label="RecipeDetailFragment">
+        <argument
+            android:name="bundle_recipe"
+            app:argType="com.bhuvnesh.diary.business.domain.model.Recipe" />
+        <action
+            android:id="@+id/action_recipeDetailFragment_to_recipeListFragment"
+            app:popUpTo="@id/recipeListFragment" />
+    </fragment>
+
+</navigation>
