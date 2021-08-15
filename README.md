@@ -1,5 +1,5 @@
 # RecipeDiary
-The sample project named RecipeDairy allows user to write recipes and save/read them to/from app's database as your personalized recipe collection.Database is synchronized with Network(Firebase Firestore).
+The sample project named RecipeDairy allows user to write recipes and save/read them to/from app's local database as your personalized recipe collection.Database is synchronized with Network(Firebase Firestore).
 This project is made of using all the latest technologies of Modern Android Development.
 
 ​Language- Kotlin
