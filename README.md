@@ -16,7 +16,7 @@ https://firebase.google.com/docs/android/setup
 2.Create Firebase Authentication user and replace the UserId generated in RecipeFirestoreServiceImpl file.
 
  const val USER_ID =
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXX" // TODO hardcoded for single user..replace with your firebase ID
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXX" // TODO hardcoded for single user..replace with your firebase USER UID
  
  
  # Credits:
