@@ -1,13 +1,21 @@
 # RecipeDiary
-The sample project named RecipeDairy allows user to write recipes and save/read them from app's database as your personalized recipe collection.Database is synched with Network(Firebase Firestore).
+The sample project named RecipeDairy allows user to write recipes and save/read them to/from app's database as your personalized recipe collection.Database is synchronized with Network(Firebase Firestore).
 This project is made of using all the latest technologies of Modern Android Development.
+
 ​Language- Kotlin
+
 ​Architecture - Model-View-Intent(MVI)
+
 ​Database- Room
+
 ​Async- Kotlin Flows and channels, Coroutines
+
 ​Dependency Injection-Hilt
+
 ​Network - Firebase Firestore
+
 ​Testing-Unit tests
+
 ​Etc- Jetpack Navigation, Gradle Dependency Management
 
 # Running this app:
@@ -16,7 +24,7 @@ https://firebase.google.com/docs/android/setup
 2.Create Firebase Authentication user and replace the UserId generated in RecipeFirestoreServiceImpl file.
 
  const val USER_ID =
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXX" // TODO hardcoded for single user..replace with your firebase USER UID
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXX" // hardcoded for single user..replace with your firebase USER UID
  
  
  # Credits:
