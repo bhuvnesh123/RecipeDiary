@@ -6,6 +6,8 @@ This project is made of using all the latest technologies of Modern Android Deve
 
 ​Language- Kotlin
 
+UI- Jetpack Compose
+
 ​Architecture - Model-View-Intent(MVI)
 
 ​Database- Room
