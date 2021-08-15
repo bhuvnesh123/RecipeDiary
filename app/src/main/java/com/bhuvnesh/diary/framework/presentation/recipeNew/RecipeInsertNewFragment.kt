@@ -13,7 +13,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -192,15 +191,7 @@ class RecipeInsertNewFragment constructor(private val viewModelFactory: ViewMode
                                         shape = RoundedCornerShape(8.dp),
                                         colors = TextFieldDefaults.textFieldColors(
                                             backgroundColor = Color.Transparent
-                                        ),
-                                        trailingIcon = {
-                                            Icon(
-                                                modifier = Modifier.padding(start = 10.dp),
-                                                imageVector = Icons.Filled.Image,
-                                                tint = Color.Blue,
-                                                contentDescription = "Select Image"
-                                            )
-                                        }
+                                        )
                                     )
                                 }
                                 Spacer(modifier = Modifier.height(16.dp))
