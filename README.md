@@ -31,6 +31,9 @@ https://firebase.google.com/docs/android/setup
  const val USER_ID =
             "XXXXXXXXXXXXXXXXXXXXXXXXXXX" // hardcoded for single user..replace with your firebase USER UID
  
+
+ # Jetpack Compose Sample Code Snippets
+https://androidlearnersite.wordpress.com/2021/08/03/jetpack-compose-1-0-0-sample-codes/
  
  # Credits:
  1.https://codingwithmitch.com/
