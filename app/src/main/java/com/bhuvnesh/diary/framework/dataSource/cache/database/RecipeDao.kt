@@ -72,7 +72,7 @@ interface RecipeDao {
         """
         SELECT * FROM recipes 
         WHERE title LIKE '%' || :query || '%' 
-        ORDER BY updated_at DESC LIMIT (:page * :pageSize)
+        ORDER BY created_at DESC LIMIT (:page * :pageSize)
         """
     )
     suspend fun searchRecipesOrderByDateDESC(
@@ -85,7 +85,7 @@ interface RecipeDao {
         """
         SELECT * FROM recipes 
         WHERE title LIKE '%' || :query || '%' 
-        ORDER BY updated_at ASC LIMIT (:page * :pageSize)
+        ORDER BY created_at ASC LIMIT (:page * :pageSize)
         """
     )
     suspend fun searchRecipesOrderByDateASC(

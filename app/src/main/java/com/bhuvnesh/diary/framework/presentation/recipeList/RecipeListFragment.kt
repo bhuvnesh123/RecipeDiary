@@ -313,7 +313,7 @@ constructor(
                             .align(Alignment.Start)
                     )
                     Text(
-                        text = recipe.updated_at.plus(" GMT"),
+                        text = recipe.created_at.plus(" GMT"),
                         style = TextStyle(fontSize = 14.sp),
                         fontStyle = FontStyle.Italic,
                         modifier = Modifier
