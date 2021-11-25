@@ -34,7 +34,12 @@ https://firebase.google.com/docs/android/setup
 
  # Jetpack Compose Sample Code Snippets
 https://androidlearnersite.wordpress.com/2021/08/03/jetpack-compose-1-0-0-sample-codes/
- 
+
+ # Jetpack Compose Complete app
+This repository contains sample project for an extended app on PlayStore which can be downloaded at below link-
+
+https://play.google.com/store/apps/details?id=com.bhuvnesh.diary
+
  # Credits:
  1.https://codingwithmitch.com/
  
