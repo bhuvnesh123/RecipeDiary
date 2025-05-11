@@ -1,5 +1,4 @@
 # RecipeDiary
-![screen1](https://user-images.githubusercontent.com/26456376/129476174-4555457b-1782-4545-809f-b3f728572ee0.png)
 
 This sample project named RecipeDairy allows user to write recipes and save/read them to/from app's local database as your personalized recipe collection.Database is synchronized with Network(Firebase Firestore).
 This project is made of using all the latest technologies of Modern Android Development.
